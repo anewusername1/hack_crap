@@ -6,4 +6,6 @@ end
 
 numbers_to_test=[20,19,17,13,11,7,5,3,2]
 
-
+def fib(n)
+  (Matrix[ [1,1], [1,0] ]**(n-1)) [0,0]
+end
