@@ -1,3 +1,12 @@
+def divisors(n)
+  n_divisors = []
+  sieve_upto(n).max.downto(1).each do |i|
+    divisible = n / i.to_f
+    n_divisors += [i,divisible.to_i] if(is_integer?(divisible))
+  end
+  n_divisors.uniq.sort
+end
+
 def factorize(n)
   return [] if n == 1
   factor = (2..n).find {|x| n % x == 0}
@@ -22,3 +31,7 @@ def sieve_upto(top)
   sieve.compact
 end
 
+def is_integer?(n)
+  fraction = n.to_s.split('.').last
+  fraction.to_i == 0
+end
