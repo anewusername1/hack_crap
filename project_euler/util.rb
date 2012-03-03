@@ -1,4 +1,4 @@
-def divisors(n)
+def factors(n)
   n_divisors = []
   sieve_upto(n).max.downto(1).each do |i|
     divisible = n / i.to_f
@@ -7,7 +7,7 @@ def divisors(n)
   n_divisors.uniq.sort
 end
 
-def factorize(n)
+def prime_factors(n)
   return [] if n == 1
   factor = (2..n).find {|x| n % x == 0}
   [factor] + factorize(n / factor)
