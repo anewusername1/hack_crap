@@ -14,7 +14,7 @@ def prime_factors(n)
 end
 
 def fib(n)
-  (Matrix[ [1,1], [1,0] ]**(n-1)) [0,0]
+  (Matrix[ [1,1], [1,0] ]**(n-1))[0,0]
 end
 
 def sieve_upto(top)
