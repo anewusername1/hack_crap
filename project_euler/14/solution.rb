@@ -8,12 +8,18 @@ def produce_chain(num)
     end
     chain_array << num
   end
+  chain_array
 end
 
-chain_arrays = []
 test_number = 1_000_000
+best_number = 0
+longest_length = 0
 while(test_number != 1)
-  chain_arrays << produce_chain(test_number)
+  chain_length = produce_chain(test_number).length
+  if(chain_length > longest_length)
+    best_number = test_number
+    longest_length = chain_length
+  end
   test_number -= 1
 end
-puts chain_arrays.compact.map {|arr| arr.length}.sort.last
+puts "best number = #{best_number}; longest_length = #{longest_length}"
