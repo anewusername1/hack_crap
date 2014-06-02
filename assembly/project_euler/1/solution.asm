@@ -1,25 +1,21 @@
 global start
 start:
-  xor edx,edx
-  mov eax,3
+  xor   edx,edx           ;sum
 
-  BEGIN_LOOP:
-    cmp eax, 1000
-    je END_LOOP
-    add edx,eax
-    add eax,3
-  END_LOOP
+  mov   eax,3
   .while eax < 1000
+    add   edx,eax
+    add   eax,3
   .endw
 
-  mov eax,5
+  mov   eax,5
   .while eax < 1000
-    add edx,eax
-    add eax,15
+    add   edx,eax
+    add   eax,15
   .endw
 
-  mov eax, 10
+  mov   eax,10
   .while eax < 1000
-    add edx,eax
-    add eax,15
+    add   edx,eax
+    add   eax,15
   .endw
